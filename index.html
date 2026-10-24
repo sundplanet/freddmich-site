@@ -4,6 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>FREDDMICH INTEGRATED SOLUTIONS — ICT Services</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="favicon.png">
 <meta name="description" content="FREDDMICH INTEGRATED SOLUTIONS is an information and communication technology company delivering software, web, POS and IT infrastructure solutions for businesses across Nigeria.">
 <style>
 :root{
@@ -56,15 +58,33 @@ header{position:sticky;top:0;z-index:50;background:rgba(11,10,7,.92);backdrop-fi
 .burger{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer}
 .burger span{width:26px;height:3px;background:var(--gold);border-radius:2px}
 /* hero */
-.hero{position:relative;background:radial-gradient(circle at 70% 20%,rgba(197,160,89,.18),transparent 55%),linear-gradient(160deg,#000 0%,#12100a 60%,#1c1708 100%);color:#fff;padding:120px 0;overflow:hidden}
-.hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center}
+.hero{position:relative;background:linear-gradient(160deg,#000 0%,#12100a 60%,#1c1708 100%);color:#fff;padding:120px 0;overflow:hidden}
+.hero::before,.hero::after{content:'';position:absolute;border-radius:50%;filter:blur(70px);z-index:0;pointer-events:none}
+.hero::before{width:420px;height:420px;background:rgba(197,160,89,.20);top:-120px;right:-80px;animation:float1 16s ease-in-out infinite}
+.hero::after{width:320px;height:320px;background:rgba(138,107,31,.22);bottom:-140px;left:-60px;animation:float2 20s ease-in-out infinite}
+@keyframes float1{50%{transform:translate(-30px,40px)}}
+@keyframes float2{50%{transform:translate(40px,-30px)}}
+.hero .container{position:relative;z-index:2}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center}
 .hero .tag{display:inline-block;background:rgba(197,160,89,.14);color:var(--gold-soft);border:1px solid rgba(197,160,89,.4);padding:6px 16px;border-radius:40px;font-size:.78rem;font-weight:700;letter-spacing:1px;margin-bottom:22px}
 .hero h1{font-size:3rem;margin-bottom:20px}
 .hero h1 span{background:linear-gradient(135deg,var(--gold-bright),var(--gold-soft));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
 .hero p{color:#ddd3c0;font-size:1.15rem;max-width:560px;margin-bottom:34px}
 .hero-actions{display:flex;gap:14px;flex-wrap:wrap}
-.hero-logo{display:flex;justify-content:center}
-.hero-logo img{max-width:320px;width:100%;filter:drop-shadow(0 20px 50px rgba(197,160,89,.35))}
+/* creative hero visual */
+.hero-visual{position:relative;display:flex;align-items:center;justify-content:center;min-height:380px}
+.orbit{position:absolute;border:1px dashed rgba(197,160,89,.28);border-radius:50%;top:50%;left:50%;transform:translate(-50%,-50%)}
+.orbit.o1{width:250px;height:250px}
+.orbit.o2{width:360px;height:360px;border-color:rgba(197,160,89,.16);animation:spin 50s linear infinite}
+.hero-core{position:relative;width:188px;height:188px;border-radius:50%;background:radial-gradient(circle at 50% 35%,#241b0a,#000 75%);border:1px solid rgba(197,160,89,.55);display:flex;align-items:center;justify-content:center;box-shadow:0 0 70px rgba(197,160,89,.3),inset 0 0 30px rgba(197,160,89,.15)}
+.hero-core img{width:138px;height:138px;object-fit:contain;filter:drop-shadow(0 8px 20px rgba(0,0,0,.6))}
+.chip{position:absolute;width:56px;height:56px;border-radius:16px;background:linear-gradient(135deg,#221c0f,#0a0906);border:1px solid rgba(197,160,89,.5);display:flex;align-items:center;justify-content:center;font-size:1.5rem;box-shadow:0 10px 24px rgba(0,0,0,.5);z-index:3}
+.chip.c1{top:4%;left:50%;margin-left:-28px;animation:bob 5s ease-in-out infinite}
+.chip.c2{top:50%;right:-6px;margin-top:-28px;animation:bob 6s ease-in-out infinite .4s}
+.chip.c3{bottom:4%;left:50%;margin-left:-28px;animation:bob 5.5s ease-in-out infinite .8s}
+.chip.c4{top:50%;left:-6px;margin-top:-28px;animation:bob 6.5s ease-in-out infinite .2s}
+@keyframes bob{50%{transform:translateY(-12px)}}
+@media(prefers-reduced-motion:reduce){.hero::before,.hero::after,.orbit.o2,.chip{animation:none}}
 /* grids */
 .grid{display:grid;gap:26px}
 .g3{grid-template-columns:repeat(3,1fr)}
@@ -99,6 +119,20 @@ header{position:sticky;top:0;z-index:50;background:rgba(11,10,7,.92);backdrop-fi
 .case-visual{background:linear-gradient(135deg,var(--gold),var(--bronze));border-radius:14px;min-height:240px;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#1a1405;text-align:center;padding:30px}
 .case-visual .mg{font-size:2.2rem;font-weight:800;letter-spacing:1px}
 .case-visual small{letter-spacing:3px}
+/* case slider */
+.slider{position:relative}
+.slides-win{overflow:hidden;border-radius:18px}
+.slides{display:flex;transition:transform .5s ease}
+.slide{min-width:100%;box-sizing:border-box}
+.slide .case{margin:0}
+.snav{position:absolute;top:50%;transform:translateY(-50%);z-index:4;width:46px;height:46px;border-radius:50%;border:1px solid rgba(197,160,89,.5);background:rgba(11,10,7,.85);color:var(--gold);font-size:1.5rem;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:.2s}
+.snav:hover{background:var(--gold);color:#1a1405}
+.snav.prev{left:-12px}
+.snav.next{right:-12px}
+.dots{display:flex;gap:10px;justify-content:center;margin-top:26px}
+.dot{width:10px;height:10px;border-radius:50%;border:0;background:var(--line);cursor:pointer;transition:.2s;padding:0}
+.dot.active{background:linear-gradient(135deg,var(--gold-bright),var(--gold));transform:scale(1.25)}
+@media(max-width:860px){.snav.prev{left:6px}.snav.next{right:6px}}
 /* about */
 .about-intro{max-width:760px;margin:0 auto 54px;text-align:center}
 .mv-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-bottom:54px}
@@ -150,8 +184,29 @@ footer a:hover{color:var(--gold)}
   .about-values{grid-template-columns:repeat(2,1fr)}
   .steps{grid-template-columns:1fr;gap:22px}
   .step:not(:last-child)::after{display:none}
-  .hero-logo{order:-1}
+  .hero-visual{order:-1;min-height:300px}
+  .hero-core{width:150px;height:150px}
+  .hero-core img{width:108px;height:108px}
+  .orbit.o1{width:210px;height:210px}
+  .orbit.o2{width:290px;height:290px}
   .hero h1{font-size:2.2rem}
+}
+/* mobile-optimized client grid */
+@media(max-width:620px){
+  .client-grid{grid-template-columns:1fr;gap:14px}
+  .client{display:flex;align-items:center;text-align:left;gap:16px;padding:16px 18px}
+  .clogo{width:60px;height:60px;margin:0;border-radius:14px;flex:none}
+  .clogo .cicon{font-size:1.5rem}
+  .clogo .cmono{min-width:26px;height:20px;font-size:.64rem;bottom:-7px;right:-7px}
+  .client .cinfo{flex:1;min-width:0}
+  .client b{font-size:1rem}
+  .client span{font-size:.82rem}
+  .client .sector{margin-top:4px;font-size:.66rem}
+}
+@media(max-width:360px){
+  .clogo{width:52px;height:52px}
+  .clogo .cicon{font-size:1.3rem}
+  .client b{font-size:.95rem}
 }
 </style>
 </head>
@@ -188,8 +243,14 @@ footer a:hover{color:var(--gold)}
         <a class="btn btn-ghost" href="#services">Explore Services</a>
       </div>
     </div>
-    <div class="hero-logo">
-      <img src="logo.png" alt="FREDDMICH Integrated Solutions">
+    <div class="hero-visual">
+      <span class="orbit o1"></span>
+      <span class="orbit o2"></span>
+      <span class="chip c1">&#128187;</span>
+      <span class="chip c2">&#128722;</span>
+      <span class="chip c3">&#128225;</span>
+      <span class="chip c4">&#127760;</span>
+      <div class="hero-core"><img src="logo.png" alt="FREDDMICH Integrated Solutions"></div>
     </div>
   </div>
 </section>
@@ -231,13 +292,13 @@ footer a:hover{color:var(--gold)}
       <p class="lead center" style="margin-top:16px">A growing family of clients across retail, hospitality and more.</p>
     </div>
     <div class="client-grid">
-      <div class="client"><div class="clogo"><span class="cicon">&#128722;</span><span class="cmono">M&amp;G</span></div><b>M&G UltraMarket</b><span>Warri</span><div class="sector"> Retail</div></div>
-      <div class="client"><div class="clogo"><span class="cicon">&#127956;</span><span class="cmono">RC</span></div><b>Radiant Crest</b><span>Obudu</span><div class="sector"> Hospitality</div></div>
-      <div class="client"><div class="clogo"><span class="cicon">&#128717;</span><span class="cmono">RS</span></div><b>Radiant Supermarket</b><span>Ikom</span><div class="sector"> Retail</div></div>
-      <div class="client"><div class="clogo"><span class="cicon">&#127970;</span><span class="cmono">LA</span></div><b>Livyte Apartment</b><span>Asaba</span><div class="sector"> Hospitality</div></div>
-      <div class="client"><div class="clogo"><span class="cicon">&#127978;</span><span class="cmono">TS</span></div><b>Town Square Market</b><span>Asaba & Shagamu</span><div class="sector"> Retail</div></div>
-      <div class="client"><div class="clogo"><span class="cicon">&#127838;</span><span class="cmono">FB</span></div><b>Faith Bakery</b><span>Port Harcourt</span><div class="sector"> Food & Bakery</div></div>
-      <div class="client"><div class="clogo"><span class="cicon">&#128087;</span><span class="cmono">FTB</span></div><b>Fortune Boutique</b><span>Warri</span><div class="sector"> Fashion & Retail</div></div>
+      <div class="client"><div class="clogo"><span class="cicon">&#128722;</span><span class="cmono">M&amp;G</span></div><div class="cinfo"><b>M&G UltraMarket</b><span>Warri</span><div class="sector"> Retail</div></div></div>
+      <div class="client"><div class="clogo"><span class="cicon">&#127956;</span><span class="cmono">RC</span></div><div class="cinfo"><b>Radiant Crest</b><span>Obudu</span><div class="sector"> Hospitality</div></div></div>
+      <div class="client"><div class="clogo"><span class="cicon">&#128717;</span><span class="cmono">RS</span></div><div class="cinfo"><b>Radiant Supermarket</b><span>Ikom</span><div class="sector"> Retail</div></div></div>
+      <div class="client"><div class="clogo"><span class="cicon">&#127970;</span><span class="cmono">LA</span></div><div class="cinfo"><b>Livyte Apartment</b><span>Asaba</span><div class="sector"> Hospitality</div></div></div>
+      <div class="client"><div class="clogo"><span class="cicon">&#127978;</span><span class="cmono">TS</span></div><div class="cinfo"><b>Town Square Market</b><span>Asaba & Shagamu</span><div class="sector"> Retail</div></div></div>
+      <div class="client"><div class="clogo"><span class="cicon">&#127838;</span><span class="cmono">FB</span></div><div class="cinfo"><b>Faith Bakery</b><span>Port Harcourt</span><div class="sector"> Food & Bakery</div></div></div>
+      <div class="client"><div class="clogo"><span class="cicon">&#128087;</span><span class="cmono">FTB</span></div><div class="cinfo"><b>Fortune Boutique</b><span>Warri</span><div class="sector"> Fashion & Retail</div></div></div>
     </div>
   </div>
 </section>
@@ -247,24 +308,92 @@ footer a:hover{color:var(--gold)}
     <div class="center" style="margin-bottom:40px;max-width:620px">
       <h2>Our <span class="gold">work</span></h2>
       <div class="title-rule"></div>
+      <p class="lead center" style="margin-top:16px">Projects we've delivered across retail, hospitality and more — swipe through a few.</p>
     </div>
-    <div class="case">
-      <div>
-        <span class="badge">CASE STUDY — RETAIL TECHNOLOGY</span>
-        <h3>M&amp;G Supermarket</h3>
-        <p>We digitised day-to-day retail operations for M&amp;G Supermarket with a connected set of in-store tools built on their existing inventory system.</p>
-        <ul>
-          <li>Customer barcode price-check kiosk</li>
-          <li>A4 shelf-edge label printer (21 labels per page)</li>
-          <li>Live inventory lookup by name or barcode</li>
-          <li>Admin panel integration &amp; support</li>
-        </ul>
+    <div class="slider" id="slider">
+      <div class="slides-win">
+        <div class="slides" id="slides">
+
+          <div class="slide"><div class="case">
+            <div>
+              <span class="badge">RETAIL TECHNOLOGY</span>
+              <h3>M&amp;G UltraMarket</h3>
+              <p>We digitised day-to-day retail operations with a connected set of in-store tools built on their existing inventory system.</p>
+              <ul>
+                <li>Customer barcode price-check kiosk</li>
+                <li>A4 shelf-edge label printer (21 labels per page)</li>
+                <li>Live inventory lookup by name or barcode</li>
+                <li>Admin panel integration &amp; support</li>
+              </ul>
+            </div>
+            <div class="case-visual"><div class="mg">M&amp;G</div><small>ULTRAMARKET</small><p style="margin-top:16px;font-size:.9rem">Warri &middot; Retail &amp; POS</p></div>
+          </div></div>
+
+          <div class="slide"><div class="case">
+            <div>
+              <span class="badge">HOSPITALITY</span>
+              <h3>Radiant Crest</h3>
+              <p>A digital presence and guest-facing systems for a growing hospitality destination in Obudu.</p>
+              <ul>
+                <li>Website &amp; online presence</li>
+                <li>Booking &amp; enquiry workflow</li>
+                <li>Networking &amp; in-house IT setup</li>
+                <li>Ongoing technical support</li>
+              </ul>
+            </div>
+            <div class="case-visual"><div class="mg">RC</div><small>RADIANT CREST</small><p style="margin-top:16px;font-size:.9rem">Obudu &middot; Hospitality</p></div>
+          </div></div>
+
+          <div class="slide"><div class="case">
+            <div>
+              <span class="badge">FOOD &amp; BAKERY</span>
+              <h3>Faith Bakery</h3>
+              <p>Point-of-sale and stock tracking tailored to a busy bakery operation in Port Harcourt.</p>
+              <ul>
+                <li>POS &amp; daily sales tracking</li>
+                <li>Ingredient &amp; stock management</li>
+                <li>Receipt &amp; label printing</li>
+                <li>Staff training &amp; support</li>
+              </ul>
+            </div>
+            <div class="case-visual"><div class="mg">FB</div><small>FAITH BAKERY</small><p style="margin-top:16px;font-size:.9rem">Port Harcourt &middot; Bakery</p></div>
+          </div></div>
+
+          <div class="slide"><div class="case">
+            <div>
+              <span class="badge">MULTI-BRANCH RETAIL</span>
+              <h3>Town Square Market</h3>
+              <p>Consistent retail systems rolled out across multiple locations in Asaba and Shagamu.</p>
+              <ul>
+                <li>Multi-branch POS &amp; inventory</li>
+                <li>Centralised price management</li>
+                <li>Barcode &amp; shelf labelling</li>
+                <li>Remote support across branches</li>
+              </ul>
+            </div>
+            <div class="case-visual"><div class="mg">TS</div><small>TOWN SQUARE</small><p style="margin-top:16px;font-size:.9rem">Asaba &amp; Shagamu &middot; Retail</p></div>
+          </div></div>
+
+          <div class="slide"><div class="case">
+            <div>
+              <span class="badge">FASHION &amp; RETAIL</span>
+              <h3>Fortune Boutique</h3>
+              <p>A polished brand presence and simple retail tooling for a fashion boutique in Warri.</p>
+              <ul>
+                <li>Brand &amp; online presence</li>
+                <li>Inventory &amp; sales tracking</li>
+                <li>Barcode product lookup</li>
+                <li>Setup &amp; ongoing support</li>
+              </ul>
+            </div>
+            <div class="case-visual"><div class="mg">FTB</div><small>FORTUNE BOUTIQUE</small><p style="margin-top:16px;font-size:.9rem">Warri &middot; Fashion</p></div>
+          </div></div>
+
+        </div>
       </div>
-      <div class="case-visual">
-        <div class="mg">M&amp;G</div>
-        <small>SUPERMARKET</small>
-        <p style="margin-top:16px;font-size:.9rem">Retail &amp; POS solutions delivered by FREDDMICH</p>
-      </div>
+      <button class="snav prev" id="prev" aria-label="Previous">&#8249;</button>
+      <button class="snav next" id="next" aria-label="Next">&#8250;</button>
+      <div class="dots" id="dots"></div>
     </div>
   </div>
 </section>
@@ -366,6 +495,52 @@ footer a:hover{color:var(--gold)}
   if(burger&&menu){burger.addEventListener('click',function(){menu.classList.toggle('open');});
     menu.addEventListener('click',function(e){if(e.target.tagName==='A'){menu.classList.remove('open');}});}
   var yr=document.getElementById('yr');if(yr){yr.textContent=new Date().getFullYear();}
+
+  // case-study slider
+  var slides=document.getElementById('slides');
+  if(slides){
+    var total=slides.children.length,i=0,timer;
+    var dots=document.getElementById('dots');
+    function go(n){i=(n+total)%total;slides.style.transform='translateX(-'+(i*100)+'%)';
+      if(dots){for(var d=0;d<dots.children.length;d++){dots.children[d].classList.toggle('active',d===i);}}}
+    for(var k=0;k<total;k++){(function(idx){
+      var b=document.createElement('button');b.className='dot'+(idx===0?' active':'');
+      b.setAttribute('aria-label','Go to slide '+(idx+1));
+      b.addEventListener('click',function(){go(idx);reset();});
+      if(dots){dots.appendChild(b);} })(k);}
+    var prev=document.getElementById('prev'),next=document.getElementById('next');
+    if(prev){prev.addEventListener('click',function(){go(i-1);reset();});}
+    if(next){next.addEventListener('click',function(){go(i+1);reset();});}
+    function start(){timer=setInterval(function(){go(i+1);},6000);}
+    function reset(){clearInterval(timer);start();}
+    start();
+    var sl=document.getElementById('slider');
+    if(sl){sl.addEventListener('mouseenter',function(){clearInterval(timer);});
+      sl.addEventListener('mouseleave',start);}
+  }
+
+  // contact form -> FormSubmit (AJAX) then branded thank-you page
+  var form=document.getElementById('quoteForm');
+  if(form){form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var note=document.getElementById('formNote');
+    var btn=form.querySelector('button[type=submit]');
+    if(btn){btn.disabled=true;btn.textContent='Sending\u2026';}
+    fetch('https://formsubmit.co/ajax/info@freddmichsoluttions.com.ng',{
+      method:'POST',
+      headers:{'Content-Type':'application/json','Accept':'application/json'},
+      body:JSON.stringify({
+        name:form.name.value,email:form.email.value,
+        service:form.service.value,message:form.message.value,
+        _subject:'New enquiry from FREDDMICH website'
+      })
+    }).then(function(r){return r.json();}).then(function(){
+      window.location.href='thank-you.html';
+    }).catch(function(){
+      if(note){note.textContent='Sorry, something went wrong. Please email us directly at info@freddmichsoluttions.com.ng';note.style.color='#e8a',note.style.color='#f0a36a';}
+      if(btn){btn.disabled=false;btn.textContent='Send Request';}
+    });
+  });}
 })();
 </script>
 
