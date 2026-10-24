@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FREDDMICH INTEGRATED SOLUTIONS — ICT Services</title>
+<meta name="description" content="FREDDMICH INTEGRATED SOLUTIONS is an information and communication technology company delivering software, web, POS and IT infrastructure solutions for businesses across Nigeria.">
+<style>
+:root{
+  --gold:#C5A059;
+  --gold-bright:#D4AF37;
+  --gold-soft:#e7cf92;
+  --bronze:#4A3515;
+  --ink:#0b0a07;
+  --panel:#141109;
+  --panel2:#1c1810;
+  --line:#2c2516;
+  --text:#efe7d6;
+  --muted:#a9a08b;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Segoe UI',system-ui,-apple-system,Arial,sans-serif;color:var(--text);background:var(--ink);line-height:1.6}
+a{text-decoration:none;color:inherit}
+.container{max-width:1140px;margin:0 auto;padding:0 24px}
+section{padding:84px 0}
+h1,h2,h3{line-height:1.2;font-weight:800}
+h2{font-size:2rem;margin-bottom:12px;color:#fff}
+.gold{color:var(--gold)}
+.lead{color:var(--muted);font-size:1.05rem;max-width:640px}
+.center{text-align:center;margin:0 auto}
+.btn{display:inline-block;padding:13px 28px;border-radius:8px;font-weight:700;transition:.2s;cursor:pointer;border:2px solid transparent}
+.btn-primary{background:linear-gradient(135deg,var(--gold-bright),var(--gold));color:#1a1405}
+.btn-primary:hover{filter:brightness(1.08)}
+.btn-ghost{border-color:var(--gold);color:var(--gold)}
+.btn-ghost:hover{background:var(--gold);color:#1a1405}
+.title-rule{width:64px;height:3px;background:linear-gradient(90deg,var(--gold-bright),var(--gold));margin:14px auto 0;border-radius:3px}
+/* header */
+header{position:sticky;top:0;z-index:50;background:rgba(11,10,7,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:74px}
+.brand{display:flex;align-items:center;gap:12px}
+.brand img{height:46px;width:auto;display:block}
+.brand-name{font-weight:800;font-size:1.02rem;letter-spacing:.5px;color:#fff}
+.brand-name small{display:block;font-size:.6rem;color:var(--gold);font-weight:600;letter-spacing:3px}
+.menu{display:flex;gap:30px;list-style:none}
+.menu a{font-weight:600;color:var(--text);font-size:.95rem}
+.menu a:hover{color:var(--gold)}
+.nav-cta{background:linear-gradient(135deg,var(--gold-bright),var(--gold));color:#1a1405 !important;padding:9px 18px;border-radius:7px;font-weight:700}
+.burger{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer}
+.burger span{width:26px;height:3px;background:var(--gold);border-radius:2px}
+/* hero */
+.hero{position:relative;background:radial-gradient(circle at 70% 20%,rgba(197,160,89,.18),transparent 55%),linear-gradient(160deg,#000 0%,#12100a 60%,#1c1708 100%);color:#fff;padding:120px 0;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center}
+.hero .tag{display:inline-block;background:rgba(197,160,89,.14);color:var(--gold-soft);border:1px solid rgba(197,160,89,.4);padding:6px 16px;border-radius:40px;font-size:.78rem;font-weight:700;letter-spacing:1px;margin-bottom:22px}
+.hero h1{font-size:3rem;margin-bottom:20px}
+.hero h1 span{background:linear-gradient(135deg,var(--gold-bright),var(--gold-soft));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.hero p{color:#ddd3c0;font-size:1.15rem;max-width:560px;margin-bottom:34px}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+.hero-logo{display:flex;justify-content:center}
+.hero-logo img{max-width:320px;width:100%;filter:drop-shadow(0 20px 50px rgba(197,160,89,.35))}
+/* grids */
+.grid{display:grid;gap:26px}
+.g3{grid-template-columns:repeat(3,1fr)}
+.card{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:14px;padding:30px;transition:.2s}
+.card:hover{transform:translateY(-4px);border-color:rgba(197,160,89,.55);box-shadow:0 14px 34px rgba(0,0,0,.5)}
+.card .ico{width:52px;height:52px;border-radius:12px;background:linear-gradient(135deg,var(--gold-bright),var(--gold));color:#1a1405;display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:16px}
+.card h3{font-size:1.15rem;margin-bottom:8px;color:#fff}
+.card p{color:var(--muted);font-size:.95rem}
+/* stats */
+.stats{background:linear-gradient(180deg,#000,#120f09);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;text-align:center}
+.stat .num{font-size:2.4rem;font-weight:800;color:var(--gold)}
+.stat .lbl{color:var(--muted);font-size:.9rem;font-weight:600}
+/* clients */
+.client-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.client{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:12px;padding:28px 26px;text-align:center;transition:.2s}
+.client:hover{border-color:rgba(197,160,89,.55);transform:translateY(-3px)}
+.clogo{width:84px;height:84px;margin:0 auto 14px;border-radius:18px;position:relative;display:flex;align-items:center;justify-content:center;background:linear-gradient(140deg,#1f1a0e,#0a0906);border:1px solid rgba(197,160,89,.45);box-shadow:inset 0 0 18px rgba(197,160,89,.12),0 8px 20px rgba(0,0,0,.45)}
+.clogo .cicon{font-size:2rem;line-height:1;filter:drop-shadow(0 2px 4px rgba(0,0,0,.5))}
+.clogo .cmono{position:absolute;bottom:-9px;right:-9px;min-width:30px;height:24px;padding:0 7px;border-radius:7px;background:linear-gradient(135deg,var(--gold-bright),var(--gold));color:#1a1405;font-size:.72rem;font-weight:800;letter-spacing:.5px;display:flex;align-items:center;justify-content:center;box-shadow:0 3px 8px rgba(0,0,0,.4)}
+.client b{display:block;color:#fff;font-size:1rem}
+.client span{color:var(--muted);font-size:.85rem}
+.client .sector{display:inline-block;margin-top:8px;font-size:.72rem;color:var(--gold-soft);letter-spacing:1px;text-transform:uppercase}
+/* case study */
+.case{display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:center;background:linear-gradient(135deg,#120f09,#000);border:1px solid var(--line);border-radius:18px;padding:46px}
+.case .badge{display:inline-block;background:rgba(197,160,89,.14);color:var(--gold-soft);border:1px solid rgba(197,160,89,.4);padding:5px 14px;border-radius:30px;font-size:.76rem;font-weight:700;margin-bottom:16px}
+.case h3{font-size:1.7rem;margin-bottom:14px;color:#fff}
+.case p{color:#cbc1ad;margin-bottom:14px}
+.case ul{list-style:none;margin-top:8px}
+.case li{padding:7px 0 7px 26px;position:relative;color:#ddd3c0;font-size:.95rem}
+.case li:before{content:'\2714';position:absolute;left:0;color:var(--gold);font-weight:700}
+.case-visual{background:linear-gradient(135deg,var(--gold),var(--bronze));border-radius:14px;min-height:240px;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#1a1405;text-align:center;padding:30px}
+.case-visual .mg{font-size:2.2rem;font-weight:800;letter-spacing:1px}
+.case-visual small{letter-spacing:3px}
+/* about */
+.about{display:grid;grid-template-columns:1fr 1fr;gap:46px;align-items:center}
+.about .pill{display:inline-block;background:var(--panel2);border:1px solid var(--line);padding:8px 16px;border-radius:30px;font-size:.85rem;font-weight:600;margin:5px 6px 0 0;color:var(--gold-soft)}
+.info-row{display:flex;gap:14px;margin-bottom:22px;align-items:flex-start}
+.info-row .ico{width:44px;height:44px;flex:none;border-radius:10px;background:linear-gradient(135deg,var(--gold-bright),var(--gold));color:#1a1405;display:flex;align-items:center;justify-content:center;font-size:1.1rem}
+.info-row b{display:block;color:#fff}
+.info-row span{color:var(--muted);font-size:.92rem}
+/* contact */
+.contact{background:linear-gradient(180deg,#120f09,#000);border-top:1px solid var(--line)}
+.contact-wrap{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.field{margin-bottom:16px}
+.field label{display:block;font-weight:600;font-size:.9rem;margin-bottom:6px;color:#fff}
+.field input,.field textarea{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-family:inherit;font-size:.95rem;background:#0a0906;color:var(--text)}
+.field input:focus,.field textarea:focus{outline:2px solid var(--gold);border-color:transparent}
+/* footer */
+footer{background:#000;color:#b3a98f;padding:44px 0;text-align:center;border-top:1px solid var(--line)}
+footer img{height:56px;margin-bottom:10px}
+footer .fname{color:var(--gold);font-weight:800;font-size:1.1rem;letter-spacing:1px}
+footer a{color:var(--gold-soft)}
+footer a:hover{color:var(--gold)}
+.sep{height:1px;background:var(--line);margin:22px 0}
+@media(max-width:860px){
+  .menu{display:none;position:absolute;top:74px;left:0;right:0;background:#0b0a07;flex-direction:column;padding:20px 24px;gap:16px;border-bottom:1px solid var(--line)}
+  .menu.open{display:flex}
+  .burger{display:flex}
+  .g3,.stat-grid,.client-grid{grid-template-columns:1fr}
+  .stat-grid,.client-grid{grid-template-columns:repeat(2,1fr)}
+  .hero-grid,.case,.about,.contact-wrap{grid-template-columns:1fr}
+  .hero-logo{order:-1}
+  .hero h1{font-size:2.2rem}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <a class="brand" href="#top">
+      <img src="logo.png" alt="FREDDMICH Integrated Solutions logo">
+      <div class="brand-name">FREDDMICH<small>INTEGRATED SOLUTIONS</small></div>
+    </a>
+    <ul class="menu" id="menu">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#clients">Clients</a></li>
+      <li><a href="#work">Case Study</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a class="nav-cta" href="#contact">Get a Quote</a></li>
+    </ul>
+    <button class="burger" id="burger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="container hero-grid">
+    <div>
+      <span class="tag">INFORMATION &amp; COMMUNICATION TECHNOLOGY</span>
+      <h1>Technology that moves your <span>business forward</span></h1>
+      <p>FREDDMICH INTEGRATED SOLUTIONS builds software, websites, retail &amp; POS systems, and IT infrastructure that help businesses across Nigeria run smarter, sell faster, and grow with confidence.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#contact">Start a Project</a>
+        <a class="btn btn-ghost" href="#services">Explore Services</a>
+      </div>
+    </div>
+    <div class="hero-logo">
+      <img src="logo.png" alt="FREDDMICH Integrated Solutions">
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="container">
+    <div class="center" style="margin-bottom:46px;max-width:620px">
+      <h2>What we <span class="gold">do</span></h2>
+      <div class="title-rule"></div>
+      <p class="lead center" style="margin-top:16px">End-to-end ICT solutions, built and supported by a team that understands business on the ground.</p>
+    </div>
+    <div class="grid g3">
+      <div class="card"><div class="ico">&#128187;</div><h3>Software Development</h3><p>Custom web and desktop applications tailored to your workflow — inventory, accounting, booking and management systems.</p></div>
+      <div class="card"><div class="ico">&#127760;</div><h3>Web Design &amp; Hosting</h3><p>Fast, modern, mobile-friendly websites with domain setup, email, SSL and reliable hosting that keeps you online.</p></div>
+      <div class="card"><div class="ico">&#128722;</div><h3>Retail &amp; POS Systems</h3><p>Point-of-sale, barcode and inventory solutions for supermarkets and shops — from price-check kiosks to shelf labels.</p></div>
+      <div class="card"><div class="ico">&#128225;</div><h3>IT Infrastructure</h3><p>Networking, CCTV, servers and office IT setup — planned, deployed and maintained for dependable performance.</p></div>
+      <div class="card"><div class="ico">&#128274;</div><h3>Security &amp; Support</h3><p>Data backup, cybersecurity basics and ongoing technical support so your systems stay safe and always running.</p></div>
+      <div class="card"><div class="ico">&#128202;</div><h3>Digital Consulting</h3><p>We help you choose the right tools, digitise operations and get real value from technology investments.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="stats">
+  <div class="container">
+    <div class="stat-grid">
+      <div class="stat"><div class="num">50+</div><div class="lbl">Projects Delivered</div></div>
+      <div class="stat"><div class="num">30+</div><div class="lbl">Clients Served</div></div>
+      <div class="stat"><div class="num">24/7</div><div class="lbl">Support Available</div></div>
+      <div class="stat"><div class="num">100%</div><div class="lbl">Commitment</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="clients">
+  <div class="container">
+    <div class="center" style="margin-bottom:46px;max-width:620px">
+      <h2>Trusted by <span class="gold">leading businesses</span></h2>
+      <div class="title-rule"></div>
+      <p class="lead center" style="margin-top:16px">A growing family of clients across retail, hospitality and more.</p>
+    </div>
+    <div class="client-grid">
+      <div class="client"><div class="clogo"><span class="cicon">&#128722;</span><span class="cmono">M&amp;G</span></div><b>M&amp;G Supermarket</b><span>Retail</span><div class="sector">Supermarket</div></div>
+      <div class="client"><div class="clogo"><span class="cicon">&#127956;</span><span class="cmono">RC</span></div><b>Radiant Crest</b><span>Obudu</span><div class="sector">Hospitality</div></div>
+      <div class="client"><div class="clogo"><span class="cicon">&#128717;</span><span class="cmono">RS</span></div><b>Radiant Supermarket</b><span>Ikom</span><div class="sector">Retail</div></div>
+      <div class="client"><div class="clogo"><span class="cicon">&#127970;</span><span class="cmono">LA</span></div><b>Livyte Apartment</b><span>Asaba</span><div class="sector">Hospitality</div></div>
+      <div class="client"><div class="clogo"><span class="cicon">&#127978;</span><span class="cmono">TS</span></div><b>Town Square Market</b><span>Asaba &amp; Shagamu</span><div class="sector">Retail</div></div>
+      <div class="client"><div class="clogo"><span class="cicon">&#127838;</span><span class="cmono">FB</span></div><b>Faith Bakery</b><span>Port Harcourt</span><div class="sector">Food &amp; Bakery</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="container">
+    <div class="center" style="margin-bottom:40px;max-width:620px">
+      <h2>Our <span class="gold">work</span></h2>
+      <div class="title-rule"></div>
+    </div>
+    <div class="case">
+      <div>
+        <span class="badge">CASE STUDY — RETAIL TECHNOLOGY</span>
+        <h3>M&amp;G Supermarket</h3>
+        <p>We digitised day-to-day retail operations for M&amp;G Supermarket with a connected set of in-store tools built on their existing inventory system.</p>
+        <ul>
+          <li>Customer barcode price-check kiosk</li>
+          <li>A4 shelf-edge label printer (21 labels per page)</li>
+          <li>Live inventory lookup by name or barcode</li>
+          <li>Admin panel integration &amp; support</li>
+        </ul>
+      </div>
+      <div class="case-visual">
+        <div class="mg">M&amp;G</div>
+        <small>SUPERMARKET</small>
+        <p style="margin-top:16px;font-size:.9rem">Retail &amp; POS solutions delivered by FREDDMICH</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="container about">
+    <div>
+      <h2>About <span class="gold">FREDDMICH</span></h2>
+      <div class="title-rule" style="margin-left:0"></div>
+      <p class="lead" style="margin-top:18px">FREDDMICH INTEGRATED SOLUTIONS is an information and communication technology company helping businesses adopt the right technology — practically and affordably.</p>
+      <p style="color:var(--muted);margin-top:16px">From software and websites to retail systems and IT infrastructure, we partner with our clients from idea to deployment and beyond. Our focus is simple: solutions that work reliably and deliver real value.</p>
+      <div style="margin-top:20px">
+        <span class="pill">Software</span>
+        <span class="pill">Web &amp; Hosting</span>
+        <span class="pill">POS &amp; Retail</span>
+        <span class="pill">Networking</span>
+        <span class="pill">CCTV</span>
+        <span class="pill">IT Support</span>
+      </div>
+    </div>
+    <div class="card" style="padding:36px">
+      <h3 style="margin-bottom:16px;color:#fff">Why work with us</h3>
+      <div class="info-row"><div class="ico">&#9889;</div><div><b>Fast delivery</b><span>Clear timelines and steady progress.</span></div></div>
+      <div class="info-row"><div class="ico">&#129309;</div><div><b>Reliable support</b><span>We stay with you after launch.</span></div></div>
+      <div class="info-row"><div class="ico">&#128176;</div><div><b>Fair pricing</b><span>Right-sized solutions for your budget.</span></div></div>
+      <div class="info-row"><div class="ico">&#127919;</div><div><b>Local expertise</b><span>We understand business in Nigeria.</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="center" style="margin-bottom:40px;max-width:620px">
+      <h2>Let's build <span class="gold">something</span></h2>
+      <div class="title-rule"></div>
+      <p class="lead center" style="margin-top:16px">Tell us about your project and we'll get back to you.</p>
+    </div>
+    <div class="contact-wrap">
+      <div>
+        <div class="info-row"><div class="ico">&#9742;</div><div><b>Phone</b><span>+234 XXX XXX XXXX</span></div></div>
+        <div class="info-row"><div class="ico">&#9993;</div><div><b>Email</b><span>info@freddmich.com</span></div></div>
+        <div class="info-row"><div class="ico">&#128205;</div><div><b>Location</b><span>Nigeria</span></div></div>
+        <div class="info-row"><div class="ico">&#128172;</div><div><b>Hours</b><span>Mon – Sat, 9am – 6pm</span></div></div>
+      </div>
+      <form class="card" id="quoteForm" style="padding:32px">
+        <div class="field"><label for="n">Name</label><input id="n" name="name" required></div>
+        <div class="field"><label for="e">Email</label><input id="e" name="email" type="email" required></div>
+        <div class="field"><label for="s">Service needed</label><input id="s" name="service"></div>
+        <div class="field"><label for="m">Message</label><textarea id="m" name="message" rows="4" required></textarea></div>
+        <button class="btn btn-primary" type="submit" style="width:100%">Send Request</button>
+        <p id="formNote" style="margin-top:12px;font-size:.9rem;color:var(--muted)"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <img src="logo.png" alt="FREDDMICH Integrated Solutions">
+    <div class="fname">FREDDMICH INTEGRATED SOLUTIONS</div>
+    <p style="margin-top:6px;font-size:.9rem">Information &amp; Communication Technology</p>
+    <div class="sep"></div>
+    <p style="font-size:.85rem">&copy; <span id="yr"></span> FREDDMICH INTEGRATED SOLUTIONS. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var burger=document.getElementById('burger');
+  var menu=document.getElementById('menu');
+  if(burger&&menu){burger.addEventListener('click',function(){menu.classList.toggle('open');});
+    menu.addEventListener('click',function(e){if(e.target.tagName==='A'){menu.classList.remove('open');}});}
+  var yr=document.getElementById('yr');if(yr){yr.textContent=new Date().getFullYear();}
+  var form=document.getElementById('quoteForm');
+  if(form){form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var note=document.getElementById('formNote');
+    if(note){note.textContent='Thank you! Your request has been noted. Connect this form to Cloudflare, Formspree or email to receive submissions.';note.style.color='#5fd08a';}
+    form.reset();
+  });}
+})();
+</script>
+
+</body>
+</html>
