@@ -37,18 +37,11 @@ h2{font-size:2rem;margin-bottom:12px;color:#fff}
 .title-rule{width:64px;height:3px;background:linear-gradient(90deg,var(--gold-bright),var(--gold));margin:14px auto 0;border-radius:3px}
 /* header */
 header{position:sticky;top:0;z-index:50;background:rgba(11,10,7,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-.nav{display:flex;align-items:center;justify-content:space-between;height:78px}
-.brand{display:flex;align-items:center;gap:14px}
-.brand-mark{position:relative;width:52px;height:52px;flex:none;border-radius:50%;display:flex;align-items:center;justify-content:center}
-.brand-mark::before{content:'';position:absolute;inset:-3px;border-radius:50%;background:conic-gradient(from 0deg,var(--gold-bright),#8a6b1f,var(--gold-soft),#8a6b1f,var(--gold-bright));animation:spin 6s linear infinite;z-index:0}
-.brand-mark::after{content:'';position:absolute;inset:1px;border-radius:50%;background:#0b0a07;z-index:1}
-.brand-mark img{position:relative;z-index:2;width:40px;height:40px;object-fit:contain;border-radius:50%}
-@keyframes spin{to{transform:rotate(360deg)}}
-.brand-name{font-weight:800;font-size:1.05rem;letter-spacing:.5px;color:#fff;position:relative}
-.brand-name .fx{background:linear-gradient(90deg,var(--gold) 0%,#fff6dd 25%,var(--gold-bright) 50%,#fff6dd 75%,var(--gold) 100%);background-size:200% auto;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:shimmer 4s linear infinite}
-@keyframes shimmer{to{background-position:200% center}}
-.brand-name small{display:block;font-size:.58rem;color:var(--gold);font-weight:600;letter-spacing:4px}
-@media(prefers-reduced-motion:reduce){.brand-mark::before,.brand-name .fx{animation:none}}
+.nav{display:flex;align-items:center;justify-content:space-between;height:74px}
+.brand{display:flex;align-items:center;gap:12px}
+.brand img{height:46px;width:auto;display:block}
+.brand-name{font-weight:800;font-size:1.02rem;letter-spacing:.5px;color:#fff}
+.brand-name small{display:block;font-size:.6rem;color:var(--gold);font-weight:600;letter-spacing:3px}
 .menu{display:flex;gap:30px;list-style:none}
 .menu a{font-weight:600;color:var(--text);font-size:.95rem}
 .menu a:hover{color:var(--gold)}
@@ -100,26 +93,7 @@ header{position:sticky;top:0;z-index:50;background:rgba(11,10,7,.92);backdrop-fi
 .case-visual .mg{font-size:2.2rem;font-weight:800;letter-spacing:1px}
 .case-visual small{letter-spacing:3px}
 /* about */
-.about-intro{max-width:760px;margin:0 auto 54px;text-align:center}
-.mv-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-bottom:54px}
-.mv{position:relative;background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:16px;padding:36px;overflow:hidden}
-.mv::before{content:'';position:absolute;top:-40px;right:-40px;width:140px;height:140px;border-radius:50%;background:radial-gradient(circle,rgba(197,160,89,.22),transparent 70%)}
-.mv .mv-ico{font-size:2rem;margin-bottom:14px}
-.mv h3{color:var(--gold);font-size:1.25rem;margin-bottom:10px}
-.mv p{color:var(--muted);font-size:.98rem}
-.about-values{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-bottom:56px}
-.val{text-align:center;padding:26px 18px;background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:14px;transition:.2s}
-.val:hover{transform:translateY(-4px);border-color:rgba(197,160,89,.55)}
-.val .ico{width:54px;height:54px;margin:0 auto 14px;border-radius:14px;background:linear-gradient(135deg,var(--gold-bright),var(--gold));color:#1a1405;display:flex;align-items:center;justify-content:center;font-size:1.3rem}
-.val b{display:block;color:#fff;margin-bottom:4px}
-.val span{color:var(--muted);font-size:.86rem}
-.approach h3{text-align:center;color:#fff;font-size:1.3rem;margin-bottom:8px}
-.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:34px;position:relative}
-.step{text-align:center;padding:0 16px;position:relative}
-.step:not(:last-child)::after{content:'';position:absolute;top:26px;right:-50%;width:100%;height:2px;background:linear-gradient(90deg,var(--gold),transparent)}
-.step .num{width:54px;height:54px;margin:0 auto 14px;border-radius:50%;background:#0b0a07;border:2px solid var(--gold);color:var(--gold);font-weight:800;font-size:1.2rem;display:flex;align-items:center;justify-content:center;position:relative;z-index:2}
-.step b{display:block;color:#fff;margin-bottom:4px}
-.step span{color:var(--muted);font-size:.86rem}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:46px;align-items:center}
 .about .pill{display:inline-block;background:var(--panel2);border:1px solid var(--line);padding:8px 16px;border-radius:30px;font-size:.85rem;font-weight:600;margin:5px 6px 0 0;color:var(--gold-soft)}
 .info-row{display:flex;gap:14px;margin-bottom:22px;align-items:flex-start}
 .info-row .ico{width:44px;height:44px;flex:none;border-radius:10px;background:linear-gradient(135deg,var(--gold-bright),var(--gold));color:#1a1405;display:flex;align-items:center;justify-content:center;font-size:1.1rem}
@@ -145,11 +119,7 @@ footer a:hover{color:var(--gold)}
   .burger{display:flex}
   .g3,.stat-grid,.client-grid{grid-template-columns:1fr}
   .stat-grid,.client-grid{grid-template-columns:repeat(2,1fr)}
-  .hero-grid,.case,.contact-wrap{grid-template-columns:1fr}
-  .mv-grid{grid-template-columns:1fr}
-  .about-values{grid-template-columns:repeat(2,1fr)}
-  .steps{grid-template-columns:1fr;gap:22px}
-  .step:not(:last-child)::after{display:none}
+  .hero-grid,.case,.about,.contact-wrap{grid-template-columns:1fr}
   .hero-logo{order:-1}
   .hero h1{font-size:2.2rem}
 }
@@ -160,8 +130,8 @@ footer a:hover{color:var(--gold)}
 <header>
   <div class="container nav">
     <a class="brand" href="#top">
-      <span class="brand-mark"><img src="logo.png" alt="FREDDMICH Integrated Solutions logo"></span>
-      <span class="brand-name"><span class="fx">FREDDMICH</span><small>INTEGRATED SOLUTIONS</small></span>
+      <img src="logo.png" alt="FREDDMICH Integrated Solutions logo">
+      <div class="brand-name">FREDDMICH<small>INTEGRATED SOLUTIONS</small></div>
     </a>
     <ul class="menu" id="menu">
       <li><a href="#services">Services</a></li>
@@ -231,13 +201,12 @@ footer a:hover{color:var(--gold)}
       <p class="lead center" style="margin-top:16px">A growing family of clients across retail, hospitality and more.</p>
     </div>
     <div class="client-grid">
-      <div class="client"><div class="clogo"><span class="cicon">&#128722;</span><span class="cmono">M&amp;G</span></div><b>M&G UltraMarket</b><span>Warri</span><div class="sector"> Retail</div></div>
-      <div class="client"><div class="clogo"><span class="cicon">&#127956;</span><span class="cmono">RC</span></div><b>Radiant Crest</b><span>Obudu</span><div class="sector"> Hospitality</div></div>
-      <div class="client"><div class="clogo"><span class="cicon">&#128717;</span><span class="cmono">RS</span></div><b>Radiant Supermarket</b><span>Ikom</span><div class="sector"> Retail</div></div>
-      <div class="client"><div class="clogo"><span class="cicon">&#127970;</span><span class="cmono">LA</span></div><b>Livyte Apartment</b><span>Asaba</span><div class="sector"> Hospitality</div></div>
-      <div class="client"><div class="clogo"><span class="cicon">&#127978;</span><span class="cmono">TS</span></div><b>Town Square Market</b><span>Asaba & Shagamu</span><div class="sector"> Retail</div></div>
-      <div class="client"><div class="clogo"><span class="cicon">&#127838;</span><span class="cmono">FB</span></div><b>Faith Bakery</b><span>Port Harcourt</span><div class="sector"> Food & Bakery</div></div>
-      <div class="client"><div class="clogo"><span class="cicon">&#128087;</span><span class="cmono">FTB</span></div><b>Fortune Boutique</b><span>Warri</span><div class="sector"> Fashion & Retail</div></div>
+      <div class="client"><div class="clogo"><span class="cicon">&#128722;</span><span class="cmono">M&amp;G</span></div><b>M&amp;G Supermarket</b><span>Retail</span><div class="sector">Supermarket</div></div>
+      <div class="client"><div class="clogo"><span class="cicon">&#127956;</span><span class="cmono">RC</span></div><b>Radiant Crest</b><span>Obudu</span><div class="sector">Hospitality</div></div>
+      <div class="client"><div class="clogo"><span class="cicon">&#128717;</span><span class="cmono">RS</span></div><b>Radiant Supermarket</b><span>Ikom</span><div class="sector">Retail</div></div>
+      <div class="client"><div class="clogo"><span class="cicon">&#127970;</span><span class="cmono">LA</span></div><b>Livyte Apartment</b><span>Asaba</span><div class="sector">Hospitality</div></div>
+      <div class="client"><div class="clogo"><span class="cicon">&#127978;</span><span class="cmono">TS</span></div><b>Town Square Market</b><span>Asaba &amp; Shagamu</span><div class="sector">Retail</div></div>
+      <div class="client"><div class="clogo"><span class="cicon">&#127838;</span><span class="cmono">FB</span></div><b>Faith Bakery</b><span>Port Harcourt</span><div class="sector">Food &amp; Bakery</div></div>
     </div>
   </div>
 </section>
@@ -270,51 +239,27 @@ footer a:hover{color:var(--gold)}
 </section>
 
 <section class="about" id="about">
-  <div class="container">
-    <div class="about-intro">
+  <div class="container about">
+    <div>
       <h2>About <span class="gold">FREDDMICH</span></h2>
-      <div class="title-rule"></div>
-      <p class="lead center" style="margin-top:18px">FREDDMICH INTEGRATED SOLUTIONS is an information and communication technology company helping businesses across Nigeria adopt the right technology — practically, securely and affordably. From software and websites to retail systems and IT infrastructure, we partner with our clients from first idea to live deployment and beyond.</p>
-    </div>
-
-    <div class="mv-grid">
-      <div class="mv">
-        <div class="mv-ico">&#127919;</div>
-        <h3>Our Mission</h3>
-        <p>To put dependable, world-class technology within reach of every growing business — solving real problems with solutions that simply work.</p>
-      </div>
-      <div class="mv">
-        <div class="mv-ico">&#128302;</div>
-        <h3>Our Vision</h3>
-        <p>To be the most trusted ICT partner for retail, hospitality and enterprise across Nigeria — known for quality, integrity and lasting support.</p>
+      <div class="title-rule" style="margin-left:0"></div>
+      <p class="lead" style="margin-top:18px">FREDDMICH INTEGRATED SOLUTIONS is an information and communication technology company helping businesses adopt the right technology — practically and affordably.</p>
+      <p style="color:var(--muted);margin-top:16px">From software and websites to retail systems and IT infrastructure, we partner with our clients from idea to deployment and beyond. Our focus is simple: solutions that work reliably and deliver real value.</p>
+      <div style="margin-top:20px">
+        <span class="pill">Software</span>
+        <span class="pill">Web &amp; Hosting</span>
+        <span class="pill">POS &amp; Retail</span>
+        <span class="pill">Networking</span>
+        <span class="pill">CCTV</span>
+        <span class="pill">IT Support</span>
       </div>
     </div>
-
-    <div class="center" style="margin-bottom:28px"><h3 style="color:#fff;font-size:1.3rem">What makes us <span class="gold">different</span></h3></div>
-    <div class="about-values">
-      <div class="val"><div class="ico">&#9889;</div><b>Fast Delivery</b><span>Clear timelines and steady, visible progress.</span></div>
-      <div class="val"><div class="ico">&#129309;</div><b>Reliable Support</b><span>We stay with you long after launch.</span></div>
-      <div class="val"><div class="ico">&#128176;</div><b>Fair Pricing</b><span>Right-sized solutions for your budget.</span></div>
-      <div class="val"><div class="ico">&#127757;</div><b>Local Expertise</b><span>We understand business on the ground.</span></div>
-    </div>
-
-    <div class="approach">
-      <h3>How we <span class="gold">work</span></h3>
-      <div class="steps">
-        <div class="step"><div class="num">1</div><b>Discover</b><span>We listen and map out your real needs.</span></div>
-        <div class="step"><div class="num">2</div><b>Design</b><span>We plan a solution that fits your workflow.</span></div>
-        <div class="step"><div class="num">3</div><b>Build</b><span>We develop, test and deploy with care.</span></div>
-        <div class="step"><div class="num">4</div><b>Support</b><span>We train your team and keep you running.</span></div>
-      </div>
-    </div>
-
-    <div class="center" style="margin-top:50px">
-      <span class="pill">Software</span>
-      <span class="pill">Web &amp; Hosting</span>
-      <span class="pill">POS &amp; Retail</span>
-      <span class="pill">Networking</span>
-      <span class="pill">CCTV</span>
-      <span class="pill">IT Support</span>
+    <div class="card" style="padding:36px">
+      <h3 style="margin-bottom:16px;color:#fff">Why work with us</h3>
+      <div class="info-row"><div class="ico">&#9889;</div><div><b>Fast delivery</b><span>Clear timelines and steady progress.</span></div></div>
+      <div class="info-row"><div class="ico">&#129309;</div><div><b>Reliable support</b><span>We stay with you after launch.</span></div></div>
+      <div class="info-row"><div class="ico">&#128176;</div><div><b>Fair pricing</b><span>Right-sized solutions for your budget.</span></div></div>
+      <div class="info-row"><div class="ico">&#127919;</div><div><b>Local expertise</b><span>We understand business in Nigeria.</span></div></div>
     </div>
   </div>
 </section>
@@ -328,22 +273,18 @@ footer a:hover{color:var(--gold)}
     </div>
     <div class="contact-wrap">
       <div>
-        <div class="info-row"><div class="ico">&#9742;</div><div><b>Phone</b><span>+234 816 446 2920</span></div></div>
-        <div class="info-row"><div class="ico">&#9993;</div><div><b>Email</b><span>info@freddmichsoluttions.com.ng</span></div></div>
+        <div class="info-row"><div class="ico">&#9742;</div><div><b>Phone</b><span>+234 XXX XXX XXXX</span></div></div>
+        <div class="info-row"><div class="ico">&#9993;</div><div><b>Email</b><span>info@freddmich.com</span></div></div>
         <div class="info-row"><div class="ico">&#128205;</div><div><b>Location</b><span>Nigeria</span></div></div>
-        <div class="info-row"><div class="ico">&#128172;</div><div><b>Hours</b><span>Mon – Sat, 7am – 9pm</span></div></div>
+        <div class="info-row"><div class="ico">&#128172;</div><div><b>Hours</b><span>Mon – Sat, 9am – 6pm</span></div></div>
       </div>
-      <form class="card" id="quoteForm" style="padding:32px" action="https://formsubmit.co/info@freddmichsoluttions.com.ng" method="POST">
-        <input type="hidden" name="_subject" value="New enquiry from FREDDMICH website">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_template" value="table">
-        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <form class="card" id="quoteForm" style="padding:32px">
         <div class="field"><label for="n">Name</label><input id="n" name="name" required></div>
         <div class="field"><label for="e">Email</label><input id="e" name="email" type="email" required></div>
         <div class="field"><label for="s">Service needed</label><input id="s" name="service"></div>
         <div class="field"><label for="m">Message</label><textarea id="m" name="message" rows="4" required></textarea></div>
         <button class="btn btn-primary" type="submit" style="width:100%">Send Request</button>
-        <p id="formNote" style="margin-top:12px;font-size:.9rem;color:var(--muted)">We usually reply within one business day.</p>
+        <p id="formNote" style="margin-top:12px;font-size:.9rem;color:var(--muted)"></p>
       </form>
     </div>
   </div>
@@ -366,6 +307,13 @@ footer a:hover{color:var(--gold)}
   if(burger&&menu){burger.addEventListener('click',function(){menu.classList.toggle('open');});
     menu.addEventListener('click',function(e){if(e.target.tagName==='A'){menu.classList.remove('open');}});}
   var yr=document.getElementById('yr');if(yr){yr.textContent=new Date().getFullYear();}
+  var form=document.getElementById('quoteForm');
+  if(form){form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var note=document.getElementById('formNote');
+    if(note){note.textContent='Thank you! Your request has been noted. Connect this form to Cloudflare, Formspree or email to receive submissions.';note.style.color='#5fd08a';}
+    form.reset();
+  });}
 })();
 </script>
 
