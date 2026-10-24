@@ -97,7 +97,11 @@ back anytime.
 
 ## Notes
 
-- The contact form currently shows a thank-you message but does **not** send
-  submissions anywhere yet. To receive messages, connect it to a free service
-  such as Formspree, or a Cloudflare Pages Function. Ask and this can be added.
+- **The contact form is live** and sends submissions to
+  `info@freddmichsoluttions.com.ng` using the free **FormSubmit** service (no
+  account or server needed). The **first time** someone submits the form,
+  FormSubmit emails that address a one-time confirmation link — click it once to
+  activate, and all future submissions arrive in the inbox automatically.
+  To change the destination address, edit the form's `action="https://formsubmit.co/..."`
+  line in `index.html`.
 - Keep `index.html` and `logo.png` together — the page links to `logo.png`.
