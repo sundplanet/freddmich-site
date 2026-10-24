@@ -77,7 +77,7 @@ header{position:sticky;top:0;z-index:50;background:rgba(11,10,7,.92);backdrop-fi
 .orbit.o1{width:250px;height:250px}
 .orbit.o2{width:360px;height:360px;border-color:rgba(197,160,89,.16);animation:spin 50s linear infinite}
 .hero-core{position:relative;width:188px;height:188px;border-radius:50%;background:radial-gradient(circle at 50% 35%,#241b0a,#000 75%);border:1px solid rgba(197,160,89,.55);display:flex;align-items:center;justify-content:center;box-shadow:0 0 70px rgba(197,160,89,.3),inset 0 0 30px rgba(197,160,89,.15)}
-.hero-core img{width:138px;height:138px;object-fit:contain;filter:drop-shadow(0 8px 20px rgba(0,0,0,.6))}
+.hero-core img{width:86%;height:86%;object-fit:cover;border-radius:50%;filter:drop-shadow(0 8px 20px rgba(0,0,0,.6))}
 .chip{position:absolute;width:56px;height:56px;border-radius:16px;background:linear-gradient(135deg,#221c0f,#0a0906);border:1px solid rgba(197,160,89,.5);display:flex;align-items:center;justify-content:center;font-size:1.5rem;box-shadow:0 10px 24px rgba(0,0,0,.5);z-index:3}
 .chip.c1{top:4%;left:50%;margin-left:-28px;animation:bob 5s ease-in-out infinite}
 .chip.c2{top:50%;right:-6px;margin-top:-28px;animation:bob 6s ease-in-out infinite .4s}
@@ -186,7 +186,7 @@ footer a:hover{color:var(--gold)}
   .step:not(:last-child)::after{display:none}
   .hero-visual{order:-1;min-height:300px}
   .hero-core{width:150px;height:150px}
-  .hero-core img{width:108px;height:108px}
+  .hero-core img{width:86%;height:86%}
   .orbit.o1{width:210px;height:210px}
   .orbit.o2{width:290px;height:290px}
   .hero h1{font-size:2.2rem}
@@ -526,7 +526,7 @@ footer a:hover{color:var(--gold)}
     var note=document.getElementById('formNote');
     var btn=form.querySelector('button[type=submit]');
     if(btn){btn.disabled=true;btn.textContent='Sending\u2026';}
-    fetch('https://formsubmit.co/ajax/info@freddmichsoluttions.com.ng',{
+    fetch('https://formsubmit.co/ajax/fredmichsolutions@gmail.com',{
       method:'POST',
       headers:{'Content-Type':'application/json','Accept':'application/json'},
       body:JSON.stringify({
